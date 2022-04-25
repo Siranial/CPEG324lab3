@@ -3,10 +3,10 @@ use ieee.std_logic_1164.all;
 
 entity reg is
 port(
-  I: in std_logic_vector (3 downto 0); -- for loading
+  I: in std_logic_vector (7 downto 0); -- for loading
   clock: in std_logic; -- rising-edge triggering 
   enable: in std_logic; -- 0: don't do anything; 1: reg is enabled
-  O: out std_logic_vector (3 downto 0) := (others => '0') -- output
+  O: out std_logic_vector (7 downto 0) := (others => '0') -- output
 );
 end reg;
 
