@@ -2,10 +2,13 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity regb is
-    Port (  i: in std_logic_vector (7 downto 0) := (others=>'0');
-            s: in std_logic_vector (1 downto 0) := (others=>'0');
-            clk, enable: in std_logic;
-            o: out std_logic_vector (7 downto 0) := (others=>'0')
+    Port (  wd: in std_logic_vector (7 downto 0) := (others=>'0');
+            ws: in std_logic_vector (1 downto 0) := (others=>'0');
+            rs1: in std_logic_vector (1 downto 0) := (others=>'0');
+            rs2: in std_logic_vector (1 downto 0) := (others=>'0');
+            clk, we: in std_logic;
+            rd1: out std_logic_vector (7 downto 0) := (others=>'0');
+            rd2: out std_logic_vector (7 downto 0) := (others=>'0')
             );
 end regb;
 
@@ -49,11 +52,12 @@ signal R3 : std_logic_vector (7 downto 0) := (others=>'0');
 
 begin
 --  Component instantiation.
-writedemux8: demux8 port map ( I => enable, S => s, Y(0) => W(0), Y(1) => W(1), Y(2) => W(2), Y(3) => W(3));
-reg0: reg port map (i => i, clock => clk, enable => W(0), O => R0);
-reg1: reg port map (i => i, clock => clk, enable => W(1), O => R1);
-reg2: reg port map (i => i, clock => clk, enable => W(2), O => R2);
-reg3: reg port map (i => i, clock => clk, enable => W(3), O => R3);
-readmux8: mux8 port map ( I0 => R0, I1 => R1, I2 => R2, I3 => R3, S => s, Y => o);
+demuxws: demux8 port map ( I => we, S => ws, Y => W);
+reg0: reg port map (i => wd, clock => clk, enable => W(0), O => R0);
+reg1: reg port map (i => wd, clock => clk, enable => W(1), O => R1);
+reg2: reg port map (i => wd, clock => clk, enable => W(2), O => R2);
+reg3: reg port map (i => wd, clock => clk, enable => W(3), O => R3);
+muxrd1: mux8 port map ( I0 => R0, I1 => R1, I2 => R2, I3 => R3, S => rs1, Y => rd1);
+muxrd2: mux8 port map ( I0 => R0, I1 => R1, I2 => R2, I3 => R3, S => rs2, Y => rd2);
 
 end behav;
