@@ -9,7 +9,7 @@ end twosComp8;
 architecture behavioral of twosComp8 is
 
 	-- Carry vector to assist with operation
-	signal C : std_logic_vector (7 downto 0);
+	signal C : std_logic_vector (6 downto 0);
 
 	begin
 
@@ -35,6 +35,5 @@ architecture behavioral of twosComp8 is
 	C(6) <= not(I(6)) and C(5);
 
 	O(7) <= not(I(7)) xor C(6);
-	C(7) <= not(I(7)) and C(6);
 
 end behavioral;
