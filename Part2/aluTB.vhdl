@@ -7,43 +7,43 @@ end alu_tb;
 architecture behav of alu_tb is
 
 	component alu is
-		Port (  A: in std_logic_vector (3 downto 0);
-				B: in std_logic_vector (3 downto 0);
-				S: in std_logic; -- Selects adding / subtracting
-				CUF, COF: out std_logic; -- Carry under and overflow bits
-				O: out std_logic_vector (3 downto 0));
+		Port (  A,B : in std_logic_vector (7 downto 0);
+				OP : in std_logic_vector (1 downto 0);
+				EQ : out std_logic;
+				O : out std_logic_vector (7 downto 0)
+		);
 	end component;
 
 -- Input signals
-signal a,b: std_logic_vector (3 downto 0);
-signal s: std_logic;
+signal a,b: std_logic_vector (7 downto 0);
+signal op: std_logic_vector (1 downto 0);
 -- Output signals
-signal cuf,cof: std_logic;
-signal o: std_logic_vector (3 downto 0);
+signal eq: std_logic;
+signal o: std_logic_vector (7 downto 0);
 
 begin
 -- Component Instantiation
-addsub : alu port map(A => a, B => b, S => s, CUF => cuf, COF => cof, O => o);
+addsub : alu port map(A => a, B => b, OP => op, EQ => eq, O => o);
 
 --  Test cases for ALU
 process
 type pattern_type is record
 --  The inputs of the ALU.
-		a,b: std_logic_vector (3 downto 0);
-		s: std_logic;
+		a,b: std_logic_vector (7 downto 0);
+		op: std_logic_vector (1 downto 0);
 --  The expected outputs of the ALU.
-		cuf,cof: std_logic;
-		o: std_logic_vector (3 downto 0);
+		eq: std_logic;
+		o: std_logic_vector (7 downto 0);
 
 end record;
 --  The patterns to apply.
 type pattern_array is array (natural range <>) of pattern_type;
 constant patterns : pattern_array :=
---  a   ,   b   ,  s , cuf, cof,   o
-(("0100", "0010", '0', '0', '0', "0110"), -- 4 + 2 = 6
-("0100", "0001", '1', '0', '0', "0011"), -- 4 - 1 = 3
-("1100", "1001", '1', '1', '0', "0011"), -- -4 - 7 = -11 underflow
-("0100", "0101", '0', '0', '1', "1001") -- 4 + 5 = 9 overflow
+--    a     ,    b     , op ,eq ,    o
+(("00001000","00000110","00",'U',"00001110"),
+("00001000","00000110","01",'U',"00000010"), 
+("00000000","00000000","10",'U',"00000010"),
+("00000001","00000001","11",'1',"00000010")
 );
 begin
 --  Check each pattern.
@@ -51,14 +51,12 @@ begin
 --  Set the inputs.
 		a <= patterns(n).a;
 		b <= patterns(n).b;
-		s <= patterns(n).s;
+		op <= patterns(n).op;
 --  Wait for the results.
 		wait for 1 ns;
 --  Check the outputs.
-		assert cuf = patterns(n).cuf
-		report "bad cuf value" severity error;
-		assert cof = patterns(n).cof
-		report "bad cof value" severity error;
+		assert eq = patterns(n).eq
+		report "bad eq value" severity error;
 		assert o = patterns(n).o
 		report "bad output value" severity error;
 	end loop;
