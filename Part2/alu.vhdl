@@ -34,7 +34,7 @@ architecture behavioral of alu is
         process(addOut,compOut,OP) begin
 
             if OP(1) /= '1' then
-                -- If op(1) == 1 then use addsub unit
+                -- If op(1) == 0 then use addsub unit
                 O <= addOut;
             elsif OP(0) = '1' then
                 -- if op == 11 then use comparator unit
