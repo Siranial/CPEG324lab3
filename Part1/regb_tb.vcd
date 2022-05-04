@@ -1,0 +1,233 @@
+$date
+  Tue Apr 26 20:47:56 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module regb_tb $end
+$var reg 8 ! wd[7:0] $end
+$var reg 2 " ws[1:0] $end
+$var reg 2 # rs1[1:0] $end
+$var reg 2 $ rs2[1:0] $end
+$var reg 1 % clk $end
+$var reg 1 & we $end
+$var reg 8 ' rd1[7:0] $end
+$var reg 8 ( rd2[7:0] $end
+$scope module regbank $end
+$var reg 8 ) wd[7:0] $end
+$var reg 2 * ws[1:0] $end
+$var reg 2 + rs1[1:0] $end
+$var reg 2 , rs2[1:0] $end
+$var reg 1 - clk $end
+$var reg 1 . we $end
+$var reg 8 / rd1[7:0] $end
+$var reg 8 0 rd2[7:0] $end
+$var reg 4 1 w[3:0] $end
+$var reg 8 2 r0[7:0] $end
+$var reg 8 3 r1[7:0] $end
+$var reg 8 4 r2[7:0] $end
+$var reg 8 5 r3[7:0] $end
+$scope module demuxws $end
+$var reg 1 6 i $end
+$var reg 2 7 s[1:0] $end
+$var reg 4 8 y[3:0] $end
+$upscope $end
+$scope module reg0 $end
+$var reg 8 9 i[7:0] $end
+$var reg 1 : clock $end
+$var reg 1 ; enable $end
+$var reg 8 < o[7:0] $end
+$upscope $end
+$scope module reg1 $end
+$var reg 8 = i[7:0] $end
+$var reg 1 > clock $end
+$var reg 1 ? enable $end
+$var reg 8 @ o[7:0] $end
+$upscope $end
+$scope module reg2 $end
+$var reg 8 A i[7:0] $end
+$var reg 1 B clock $end
+$var reg 1 C enable $end
+$var reg 8 D o[7:0] $end
+$upscope $end
+$scope module reg3 $end
+$var reg 8 E i[7:0] $end
+$var reg 1 F clock $end
+$var reg 1 G enable $end
+$var reg 8 H o[7:0] $end
+$upscope $end
+$scope module muxrd1 $end
+$var reg 8 I i0[7:0] $end
+$var reg 8 J i1[7:0] $end
+$var reg 8 K i2[7:0] $end
+$var reg 8 L i3[7:0] $end
+$var reg 2 M s[1:0] $end
+$var reg 8 N y[7:0] $end
+$upscope $end
+$scope module muxrd2 $end
+$var reg 8 O i0[7:0] $end
+$var reg 8 P i1[7:0] $end
+$var reg 8 Q i2[7:0] $end
+$var reg 8 R i3[7:0] $end
+$var reg 2 S s[1:0] $end
+$var reg 8 T y[7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b00000100 !
+b00 "
+b00 #
+b01 $
+0%
+1&
+b00000000 '
+b00000000 (
+b00000100 )
+b00 *
+b00 +
+b01 ,
+0-
+1.
+b00000000 /
+b00000000 0
+b0001 1
+b00000000 2
+b00000000 3
+b00000000 4
+b00000000 5
+16
+b00 7
+b0001 8
+b00000100 9
+0:
+1;
+b00000000 <
+b00000100 =
+0>
+0?
+b00000000 @
+b00000100 A
+0B
+0C
+b00000000 D
+b00000100 E
+0F
+0G
+b00000000 H
+b00000000 I
+b00000000 J
+b00000000 K
+b00000000 L
+b00 M
+b00000000 N
+b00000000 O
+b00000000 P
+b00000000 Q
+b00000000 R
+b01 S
+b00000000 T
+#1000000
+1%
+b00000100 '
+1-
+b00000100 /
+b00000100 2
+1:
+b00000100 <
+1>
+1B
+1F
+b00000100 I
+b00000100 N
+b00000100 O
+#2000000
+b00000000 !
+b01 "
+b10 #
+0%
+b00000000 '
+b00000000 )
+b01 *
+b10 +
+0-
+b00000000 /
+b0010 1
+b01 7
+b0010 8
+b00000000 9
+0:
+0;
+b00000000 =
+0>
+1?
+b00000000 A
+0B
+b00000000 E
+0F
+b10 M
+b00000000 N
+#3000000
+b00100000 !
+b00 #
+1%
+0&
+b00000100 '
+b00100000 (
+b00100000 )
+b00 +
+1-
+0.
+b00000100 /
+b00100000 0
+b0000 1
+b00100000 3
+06
+b0000 8
+b00100000 9
+1:
+b00100000 =
+1>
+0?
+b00100000 @
+b00100000 A
+1B
+b00100000 E
+1F
+b00100000 J
+b00 M
+b00000100 N
+b00100000 P
+b00100000 T
+#4000000
+b00000100 !
+b00 "
+0%
+b00000100 )
+b00 *
+0-
+b00 7
+b00000100 9
+0:
+b00000100 =
+0>
+b00000100 A
+0B
+b00000100 E
+0F
+#5000000
+1%
+1-
+1:
+1>
+1B
+1F
+#6000000

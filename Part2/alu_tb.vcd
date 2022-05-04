@@ -1,0 +1,313 @@
+$date
+  Thu Apr 28 17:46:47 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module alu_tb $end
+$var reg 8 ! a[7:0] $end
+$var reg 8 " b[7:0] $end
+$var reg 2 # op[1:0] $end
+$var reg 1 $ eq $end
+$var reg 8 % o[7:0] $end
+$scope module addsub $end
+$var reg 8 & a[7:0] $end
+$var reg 8 ' b[7:0] $end
+$var reg 2 ( op[1:0] $end
+$var reg 1 ) eq $end
+$var reg 8 * o[7:0] $end
+$var reg 8 + addout[7:0] $end
+$var reg 1 , compout $end
+$scope module adder $end
+$var reg 8 - a[7:0] $end
+$var reg 8 . b[7:0] $end
+$var reg 1 / s $end
+$var reg 8 0 y[7:0] $end
+$var reg 8 1 negb[7:0] $end
+$var reg 8 2 muxout[7:0] $end
+$var reg 7 3 carry[6:0] $end
+$scope module tc $end
+$var reg 8 4 i[7:0] $end
+$var reg 8 5 o[7:0] $end
+$var reg 7 6 c[6:0] $end
+$upscope $end
+$scope module m2t1 $end
+$var reg 8 7 a[7:0] $end
+$var reg 8 8 b[7:0] $end
+$var reg 1 9 s $end
+$var reg 8 : y[7:0] $end
+$upscope $end
+$scope module fa0 $end
+$var reg 1 ; a $end
+$var reg 1 < b $end
+$var reg 1 = cin $end
+$var reg 1 > o $end
+$var reg 1 ? cout $end
+$upscope $end
+$scope module fa1 $end
+$var reg 1 @ a $end
+$var reg 1 A b $end
+$var reg 1 B cin $end
+$var reg 1 C o $end
+$var reg 1 D cout $end
+$upscope $end
+$scope module fa2 $end
+$var reg 1 E a $end
+$var reg 1 F b $end
+$var reg 1 G cin $end
+$var reg 1 H o $end
+$var reg 1 I cout $end
+$upscope $end
+$scope module fa3 $end
+$var reg 1 J a $end
+$var reg 1 K b $end
+$var reg 1 L cin $end
+$var reg 1 M o $end
+$var reg 1 N cout $end
+$upscope $end
+$scope module fa4 $end
+$var reg 1 O a $end
+$var reg 1 P b $end
+$var reg 1 Q cin $end
+$var reg 1 R o $end
+$var reg 1 S cout $end
+$upscope $end
+$scope module fa5 $end
+$var reg 1 T a $end
+$var reg 1 U b $end
+$var reg 1 V cin $end
+$var reg 1 W o $end
+$var reg 1 X cout $end
+$upscope $end
+$scope module fa6 $end
+$var reg 1 Y a $end
+$var reg 1 Z b $end
+$var reg 1 [ cin $end
+$var reg 1 \ o $end
+$var reg 1 ] cout $end
+$upscope $end
+$scope module fa7 $end
+$var reg 1 ^ a $end
+$var reg 1 _ b $end
+$var reg 1 ` cin $end
+$var reg 1 a o $end
+$var reg 1 b cout $end
+$upscope $end
+$upscope $end
+$scope module comp $end
+$var reg 8 c a[7:0] $end
+$var reg 8 d b[7:0] $end
+$var reg 1 e y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b00001000 !
+b00000110 "
+b00 #
+U$
+b00001110 %
+b00001000 &
+b00000110 '
+b00 (
+U)
+b00001110 *
+b00001110 +
+0,
+b00001000 -
+b00000110 .
+0/
+b00001110 0
+b11111010 1
+b00000110 2
+b0000000 3
+b00000110 4
+b11111010 5
+b0000001 6
+b00000110 7
+b11111010 8
+09
+b00000110 :
+0;
+0<
+0=
+0>
+0?
+0@
+1A
+0B
+1C
+0D
+0E
+1F
+0G
+1H
+0I
+1J
+0K
+0L
+1M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+0X
+0Y
+0Z
+0[
+0\
+0]
+0^
+0_
+0`
+0a
+0b
+b00001000 c
+b00000110 d
+0e
+#1000000
+b01 #
+b00000010 %
+b01 (
+b00000010 *
+b00000010 +
+1/
+b00000010 0
+b11111010 2
+b1111000 3
+19
+b11111010 :
+0F
+0H
+1K
+0M
+1N
+1P
+1Q
+0R
+1S
+1U
+1V
+0W
+1X
+1Z
+1[
+0\
+1]
+1_
+1`
+0a
+1b
+#2000000
+b00000000 !
+b00000000 "
+b10 #
+b00000000 &
+b00000000 '
+b10 (
+b00000000 +
+1,
+b00000000 -
+b00000000 .
+0/
+b00000000 0
+b00000000 1
+b00000000 2
+b0000000 3
+b00000000 4
+b00000000 5
+b1111111 6
+b00000000 7
+b00000000 8
+09
+b00000000 :
+0A
+0C
+0J
+0K
+0M
+0N
+0P
+0Q
+0S
+0U
+0V
+0W
+0X
+0Z
+0[
+0\
+0]
+0_
+0`
+0a
+0b
+b00000000 c
+b00000000 d
+1e
+#3000000
+b00000001 !
+b00000001 "
+b11 #
+1$
+b00000001 &
+b00000001 '
+b11 (
+1)
+b00000000 +
+b00000001 -
+b00000001 .
+1/
+b00000000 0
+b11111111 1
+b11111111 2
+b1111111 3
+b00000001 4
+b11111111 5
+b0000000 6
+b00000001 7
+b11111111 8
+19
+b11111111 :
+1;
+1<
+0>
+1?
+1A
+1B
+1D
+1F
+1G
+1I
+1K
+1L
+1N
+1P
+1Q
+1S
+1U
+1V
+1X
+1Z
+1[
+1]
+1_
+1`
+1b
+b00000001 c
+b00000001 d
+#4000000
